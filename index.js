@@ -8,8 +8,8 @@ const exerciseRouter = require('./route/exercise');
 
 
 const app = express();
-const env = require('dotenv');
-env.config();
+const dotenv = require('dotenv');
+dotenv.config();
 
 
 const connectionString = process.env.MONGODB_URL;

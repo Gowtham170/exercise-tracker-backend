@@ -13,7 +13,7 @@ router.route('/').get((req, res) => {
 //read specific exercise
 router.route('/:id').get((req, res) => {
     exercise.findById(req.params.id)
-            .then(user => res.json(exercise))
+            .then(exercise => res.json(exercise))
             .catch(err => res.status(400).json(`Error: ${err}`))
 });
 
@@ -21,8 +21,8 @@ router.route('/:id').get((req, res) => {
 router.route('/add').post((req, res) => {
     const userName = req.body.userName;
     const description = req.body.description;
-    const duration = req.body.duration;
-    const date = req.body.date;
+    const duration = Number(req.body.duration);
+    const date = Date.parse(req.body.date);
 
     const newExercise = new exercise({ userName, description, duration,date});
 

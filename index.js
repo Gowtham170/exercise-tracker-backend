@@ -16,9 +16,9 @@ const connectionString = process.env.MONGODB_URL;
 const port = process.env.PORT;
 
 //middleware
-// app.use(cors({
-//     origin: "https://6227719908960df4a0e34aee--netlify-thinks-gowtham170-is-great.netlify.app/"
-// }));
+app.use(cors({
+    origin: "https://62277279d969c4f6a462827d--netlify-thinks-gowtham170-is-great.netlify.app/"
+}));
 app.use(express.json());
 
 // connected to the mongoDB using the connection string

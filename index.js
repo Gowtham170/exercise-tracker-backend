@@ -16,17 +16,10 @@ const connectionString = process.env.MONGODB_URL;
 const port = process.env.PORT;
 
 //middleware
-app.use(cors());
+// app.use(cors({
+//     origin: "https://6227719908960df4a0e34aee--netlify-thinks-gowtham170-is-great.netlify.app/"
+// }));
 app.use(express.json());
-app.use((req, res, next)=>{  
-    res.setHeader("Access-Control-Allow-Origin", "*");  
-    res.setHeader(  
-        "Access-Control-Allow-Headers",  
-        "Origin, X-Requested-With, Content-Type, Accept");  
-        res.setHeader("Access-Control-Allow-Methods",  
-        "GET, POST, PATCH, DELETE, OPTIONS");  
-    next();  
-}); 
 
 // connected to the mongoDB using the connection string
 mongoose.connect(connectionString, {

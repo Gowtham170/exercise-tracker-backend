@@ -6,6 +6,7 @@ const cors = require('cors');
 const userRouter = require('./route/user');
 const exerciseRouter = require('./route/exercise');
 
+const port = process.env.PORT;
 
 const app = express();
 const dotenv = require('dotenv');
@@ -30,6 +31,6 @@ mongoose.connection.once('open', () => {
 app.use('/user', userRouter);
 app.use('/exercise', exerciseRouter);
 
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
     console.log(`Server is running on the http://localhost:${port}`);
 }); 

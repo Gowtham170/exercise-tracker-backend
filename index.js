@@ -13,9 +13,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 //middleware
-app.use(cors({
-    origin: "https://62277279d969c4f6a462827d--netlify-thinks-gowtham170-is-great.netlify.app/"
-}));
+app.use(cors());
 app.use(express.json());
 
 // connected to the mongoDB using the connection string

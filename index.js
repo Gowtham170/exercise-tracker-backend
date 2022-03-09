@@ -11,8 +11,6 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
-const port = process.env.PORT;
-
 //middleware
 app.use(cors({
     origin: "https://62277279d969c4f6a462827d--netlify-thinks-gowtham170-is-great.netlify.app/"
@@ -32,6 +30,6 @@ mongoose.connection.once('open', () => {
 app.use('/user', userRouter);
 app.use('/exercise', exerciseRouter);
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Server is running on the http://localhost:${port}`);
 }); 
